@@ -3,7 +3,7 @@ AIRPORT="en1"; #may be en0, use networksetup -listallhardwareports to check
 WIFI_NETWORK_NAME="YOUR_WIRELESS_NETWORK_NAME"
 WIFI_PASSWORD="YOUR_PASSWORD"
 THE_DATE=$(date)
-# Check to see if connected to WIFI_NETWORK_NAME every 10 seconds
+# Check to see if connected to WIFI_NETWORK_NAME every 20 seconds
 function connect {
     networksetup -setairportpower $AIRPORT off
 	networksetup -setairportpower $AIRPORT on
