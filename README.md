@@ -39,7 +39,7 @@ Create [launchd](https://developer.apple.com/library/mac/#documentation/Darwin/R
 1. Place check.connection.plist in ~/Library/LaunchAgents/
 2. Load check.connection.plist into launchctl, to launch at start up:
 
-<pre><code>launchctl load ~/Library/LaunchAgents/rokkan.wificonnect.plist</code></pre>
+<pre><code>launchctl load ~/Library/LaunchAgents/check.connection.plist</code></pre>
 
 Optional: To start using Daemon right away use 
 
