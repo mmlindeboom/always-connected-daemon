@@ -7,8 +7,8 @@ Daemon checks airport connection every 20 seconds, reconnects you in the case yo
 Edit checkconnection.sh variables:
 ===================================
 
-WIFI_NETWORK_NAME*
-WIFI_PASSWORD
+<p>WIFI_NETWORK_NAME*</p>
+<p>WIFI_PASSWORD</p>
 
 *If your Wifi network name has a space in it, escape the space with \s. For example: 
 "My Network" would be:
