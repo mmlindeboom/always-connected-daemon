@@ -1,49 +1,67 @@
 always-connected-daemon
 =======================
+---
 
 Daemon checks airport connection every 20 seconds, reconnects you in the case you've been disconnected.
 
-
 Edit checkconnection.sh variables:
-===================================
+---
 
-<p>WIFI_NETWORK_NAME*</p>
-<p>WIFI_PASSWORD</p>
+```bash
+WIFI_NETWORK_NAME="YOUR_WIRELESS_NETWORK_NAME"
+WIFI_PASSWORD="YOUR_PASSWORD"
+```
 
-*If your Wifi network name has a space in it, escape the space with \s. For example: 
+*If your WiFi network name has any whitespace in it, escape the space with \s. For example:
 "My Network" would be:
 
-<pre><code>WIFI_NETWORK_NAME="My\sNetwork"</code></pre>
+```bash
+WIFI_NETWORK_NAME="My\sNetwork\sWith\sWhite\sSpaces"
+```
 
 Edit check.connection.plist:
-===========================
-<pre><code><string>path/to/home/bin/checkconnection.sh</string></code></pre>
+---
+```xml
+<dict>
+<key>Label</key>
+<string>check.connection</string>
+<key>ProgramArguments</key>
+    <array>
+        <string>path/to/home/bin/checkconnection.sh</string>
+    </array>
+</dict>
+```
 
 *Path should begin at /root. Do not use ~/. For example: 
 
-<pre><code><string>/Users/username/bin/checkconnection.sh</string></code></pre>
-
+> /Users/username/bin/checkconnection.sh
 
 Install checkconnection.sh script:
-=====================================
+---
 
 1. Place checkconnection.sh in ~/bin/
-2. Make checkconnection.sh executable: 
+2. Make checkconnection.sh executable:
 
-<pre><code>chmod 777 ~/bin/checkconnection.sh</code></pre>
+```bash
+chmod 777 ~/bin/checkconnection.sh
+```
 
-
-Create [launchd](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man8/launchd.8.html) daemon:
-=====================
+Create [launchd][appleDoc] daemon:
+---
 
 1. Place check.connection.plist in ~/Library/LaunchAgents/
 2. Load check.connection.plist into launchctl, to launch at start up:
 
-<pre><code>launchctl load ~/Library/LaunchAgents/check.connection.plist</code></pre>
+```bash
+launchctl load ~/Library/LaunchAgents/check.connection.plist
+```
 
 Optional: To start using Daemon right away use 
 
-<pre><code>launchctl start check.connection</code></pre>
+```bash
+launchctl start check.connection
+```
 
 Otherwise it will launch when you restart your computer.
 
+[appleDoc]: https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man8/launchd.8.html
