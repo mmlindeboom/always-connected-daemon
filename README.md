@@ -43,7 +43,7 @@ Install checkconnection.sh script:
 2. Make checkconnection.sh executable:
 
 ```bash
-chmod 777 ~/bin/checkconnection.sh
+chmod a+x ~/bin/checkconnection.sh
 ```
 
 Create [launchd][appleDoc] daemon:
