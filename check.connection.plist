@@ -6,7 +6,9 @@
 	<string>check.connection</string>
 	<key>ProgramArguments</key>
     <array>
-        <string>path/to/home/bin/checkconnection.sh</string>
+        <string>/Users/mattlindeboom/bin/checkconnection.sh</string>
     </array>
+    <key>RunAtLoad</key>
+	<true/>
 </dict>
 </plist>
