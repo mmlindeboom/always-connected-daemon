@@ -53,7 +53,7 @@ Create [launchd][appleDoc] daemon:
 2. Load check.connection.plist into launchctl, to launch at start up:
 
 ```bash
-launchctl load ~/Library/LaunchAgents/check.connection.plist
+launchctl load /Library/LaunchAgents/check.connection.plist
 ```
 
 Optional: To start using Daemon right away use 
